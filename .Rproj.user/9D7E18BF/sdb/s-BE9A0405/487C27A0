@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "3*5\n",
+    "created" : 1502153808052.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3034865869",
+    "id" : "487C27A0",
+    "lastKnownWriteTime" : 1502153918,
+    "last_content_update" : 1502153918887,
+    "path" : "~/DevWork/RApps/example_r_app/test.r",
+    "project_path" : "test.r",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
