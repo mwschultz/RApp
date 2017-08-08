@@ -1,14 +1,14 @@
 {
     "collab_server" : "",
-    "contents" : "3*5\n",
+    "contents" : "require(tidyverse)\nrequire(haven)\nrequire(dplyr)\nrequire(Lahman)\nrequire(magrittr)\n\nBatting %>% select(X2B:HR)\n\nc<-Batting %>% transmute(ExtraBaseHits = X2B + X3B + HR)\n\n#mutate -- add newly created column to data frame \n#transmute -- create new variable \n\nBatting %>% summarise(AvgX2B = mean(X2B, na.rm=TRUE)) \n#NA is missing \n\nBatting %>% group_by (teamID)\n",
     "created" : 1502153808052.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3034865869",
+    "hash" : "1953013060",
     "id" : "487C27A0",
-    "lastKnownWriteTime" : 1502153918,
-    "last_content_update" : 1502153918887,
+    "lastKnownWriteTime" : 1502201849,
+    "last_content_update" : 1502201849858,
     "path" : "~/DevWork/RApps/example_r_app/test.r",
     "project_path" : "test.r",
     "properties" : {
