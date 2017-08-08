@@ -72,19 +72,36 @@ rbind(mosquitoData, mosquitoData2)
 ##Manipulating Data
 ###########################################################
 
+cancerData <- read_tsv(file = "https://raw.githubusercontent.com/jbpost2/DataScienceR/master/datasets/BreastCancer.dat")
+
 #Do not overwrite the data set in any of the steps below unless specified. Using the cancerData and chaining/piping where possible. Write R code to do the following:
 
 #1. Have R sort the data set by youngest to oldest.
-
+young <- arrange(cancerData, age)
+young
 #2. Have R print out only women who were over 50.
+over50 <- filter(cancerData, age > 50) %>% print(over50)
+
 
 #3. Have R print out only women who were over 50 and premenopausal.
 
+over50mp <- filter(cancerData, age>50 & meno == 'premenopausal') %>% print(over50mp)
+
 #4. Have R print out only women who were (over 50 and premenopausal) or (under 50 and Postmenopausal).
+
+cancerData %>% filter((age>50 & meno == 'preomenopausal') | (age<50 & meno == 'Postmenopausal'))
 
 #5. Have R find the average 'size' of the tumor for each of the previous three groups. You should have three statements to complete this.
 
+orcon %>% summarise(avgsize = mean(size, na.rm = TRUE))
+over50mp %>% summarise(avgsize = mean(size, na.rm = TRUE))
+over50 %>% summarise(avgsize = mean(size, na.RM = TRUE))
+
 #6. Have R create a new variable called 'flag' that is "flag" if the women were (over 50 and premenopausal) or (under 50 and Postmenopausal) and "no flag" if they were not. This variable should be added to the data frame.
+
+cancerData %>% 
+  mutate(flag = ifelse(((age>50 & meno == 'preomenopausal')) | 
+                         (age<50) & (meno == 'Postmenopausal')), "flag", "noflag"))
 
 #7. Have R find the average 'size' of the tumor for the "flag" and "no flag" groups in one R statment.
 
